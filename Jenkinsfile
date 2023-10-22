@@ -1,11 +1,21 @@
+// declarative pipeline
 node {
-	stage('Build') {
-		echo "Build"
-	}
-	stage('Test') {
-		echo "Test"
-	}
-	stage('Integration Test') {
-		echo "Integeration Test"
+	agent any 
+	stages {
+		stage('Build') {
+			steps {
+				echo "Build"
+			}
+		}
+		stage('Test') {
+			steps {
+				echo "Test"
+			}
+		}
+		stage('Integeration') {
+			steps {
+				echo "Integeration Test"
+			}
+		}
 	}
 }
