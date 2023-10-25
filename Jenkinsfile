@@ -4,14 +4,14 @@ pipeline {
 	environment {
 		dockerHome= tool 'JenkinsDocker'
 		mavenHome=tool 'JenkinsMaven'
-		//PATH = '$dockerHome/bin:$mavenHome/bin:$PATH'
+		PATH = '$dockerHome:$mavenHome:$PATH'
 	}
 	stages {
 		stage('Build') {
 			steps {
 				//sh 'mvn --version'
 				//sh 'docker version'
-				echo "DockerHome - $dockerHome"
+
 				echo "Build"
 				echo "Path - $PATH"
 				echo "Build Number - $env.BUILD_NUMBER"
