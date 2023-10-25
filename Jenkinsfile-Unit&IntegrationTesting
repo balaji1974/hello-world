@@ -38,31 +38,6 @@ pipeline {
 				// sh "mvn failsafe:integration-test failsafe:verify"
 			}
 		}
-		stage('Package') {
-			steps {
-				sh "mvn package -DskipTests"
-			}
-		}
-		stage('Build Docker Image') {
-			steps {
-				echo "Builing the image"
-				//sh "docker build -t balaji1974/hello-world:41"
-				script {
-					dockerImage=docker.build("balaji1974/hello-world:${env.BUILD_TAG}")
-				}
-			}
-		}
-		stage('Push Docker Image') {
-			steps {
-				echo "Pushing the image"
-				script {
-					docker.withRegistry('','DockerHub') {
-						dockerImage.push();
-						dockerImage.push('latest');
-					}
-				}
-			}
-		}
 	}
 	post {
 		always {
