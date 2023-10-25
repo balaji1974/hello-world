@@ -1,11 +1,11 @@
 // declarative pipeline
 pipeline {
 	agent any
-	//environment {
+	environment {
 		//dockerHome= tool 'JenkinsDocker'
 		//mavenHome=tool 'JenkinsMaven'
-		//PATH = '$PATH'
-	//}
+		PATH = '$PATH'+':/test/bin'
+	}
 	stages {
 		stage('Build') {
 			steps {
