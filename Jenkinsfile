@@ -13,7 +13,7 @@ pipeline {
 				//sh 'docker version'
 				//echo "Path Docker - ${dockerHome}"
 				echo "Build"
-				echo "Path :" +env.PATH
+				echo "Path :" +env.PATH +":/test/bin"
 				echo "Build Number - $env.BUILD_NUMBER"
 				echo "Build ID - $env.BUILD_ID"
 				echo "Job Name - $env.JOB_NAME"
