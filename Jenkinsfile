@@ -2,9 +2,9 @@
 pipeline {
 	agent any
 	environment {
-		dockerHome= tool 'JenkinsDocker'
-		mavenHome=tool 'JenkinsMaven'
-		PATH = '$PATH'
+		//dockerHome= tool 'JenkinsDocker'
+		//mavenHome=tool 'JenkinsMaven'
+		//PATH = '$PATH'
 	}
 	stages {
 		stage('Build') {
