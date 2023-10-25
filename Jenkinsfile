@@ -2,18 +2,18 @@
 pipeline {
 	agent any
 	environment {
-		//dockerHome= tool 'JenkinsDocker'
-		//mavenHome=tool 'JenkinsMaven'
-		PATH = $PATH+':/test/bin'
+		dockerHome= tool 'JenkinsDocker'
+		mavenHome=tool 'JenkinsMaven'
+		PATH = '$PATH'+':/test/bin'
 	}
 	stages {
 		stage('Build') {
 			steps {
 				//sh 'mvn --version'
 				//sh 'docker version'
-
+				echo "Path Docker - $dockerHome"
 				echo "Build"
-				echo "Path - $PATH"
+				echo "Path :" +env.PATH
 				echo "Build Number - $env.BUILD_NUMBER"
 				echo "Build ID - $env.BUILD_ID"
 				echo "Job Name - $env.JOB_NAME"
