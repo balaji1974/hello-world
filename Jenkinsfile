@@ -34,6 +34,8 @@ pipeline {
 		stage('Integeration') {
 			steps {
 				echo "Integeration Test"
+				echo "Add cucumber integration test later"
+				// sh "mvn failsafe:integration-test failsafe:verify"
 			}
 		}
 	}
