@@ -4,7 +4,7 @@ pipeline {
 	environment {
 		dockerHome= tool 'JenkinsDocker'
 		mavenHome=tool 'JenkinsMaven'
-		PATH=$WORKSPACE/build-dir:$PATH
+		PATH="$WORKSPACE/build-dir:$PATH"
 	}
 	stages {
 		stage('Build') {
